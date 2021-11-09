@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1><?php print $_POST["usuario"]; ?></h1>
-</body>
-</html>
+
 
 <?php 
 
@@ -19,17 +8,17 @@ header('Content-Type: application/json');
 
 
     $method = 'POST';
-    $url = 'https://dorimar-api.site/api/users/login';
+    $url = 'https://dorimar-api.site/api/users/login/';
     $json_array = [
     
-        'usuario'=> $_POST['usuario'],
-        'contraseña' => $_POST['contraseña'],
+        'email'=> $_POST['usuario'],
+        'password' => $_POST['password'],
         
     ];
 
     $body = json_encode($json_array);
-
-/*   echo '<pre>';
+/* 
+echo '<pre>';
 var_dump($json_array);
 var_dump($body);
 echo '</pre>';
@@ -44,6 +33,7 @@ die();  */
     curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
     curl_setopt($ch, CURLOPT_HEADER, false);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // return the transfer as a string
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
     $response = curl_exec($ch); // send the request and save response to $response
 
     if ($response === false) {
@@ -53,10 +43,16 @@ die();  */
     // if user account exists return the user response data
     if (curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200) {
       $response = json_decode($response, true);
+      //session
+      header('Location: home.php');
+    } else {
+      header('Location: login.html');
     }
 
     curl_close($ch);
 
     echo json_encode($response);
+
+    
 
 ?>
