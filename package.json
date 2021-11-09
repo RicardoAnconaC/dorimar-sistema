@@ -1,0 +1,20 @@
+{
+  "name": "dorimar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch src:public/estilos"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RicardoAnconaC/dorimar-sistema.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RicardoAnconaC/dorimar-sistema/issues"
+  },
+  "homepage": "https://github.com/RicardoAnconaC/dorimar-sistema#readme"
+}
