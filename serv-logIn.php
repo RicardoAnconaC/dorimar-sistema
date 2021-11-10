@@ -1,8 +1,5 @@
-
-
 <?php 
-
-
+session_start();
 
 header('Content-Type: application/json');
 
@@ -44,6 +41,10 @@ die();  */
     if (curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200) {
       $response = json_decode($response, true);
       //session
+      var_dump($response);
+      /* die(); */
+
+      $_SESSION['usuario'] = $response;
       header('Location: home.php');
     } else {
       header('Location: login.html');
@@ -51,7 +52,7 @@ die();  */
 
     curl_close($ch);
 
-    echo json_encode($response);
+    
 
     
 
