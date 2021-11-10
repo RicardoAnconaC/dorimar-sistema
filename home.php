@@ -1,10 +1,12 @@
 <?php 
 session_start(); 
+
    $session = $_SESSION['usuario'];
  if($session == null || $session == ''){
    header('location: login.html'); 
    die();
  }
+
 ?>
 
 <!DOCTYPE html>
@@ -263,7 +265,10 @@ session_start();
           </div>
           <div class="modal-footer">
             
-            <a type="button" href="logout.php" class="btn btn-secondary"  >Salir</a>
+            <form action="session.php" method="POST">
+              <input type="submit" name='submit' class="btn btn-secondary" value='Salir'></input>
+            </form>
+            
           </div>
         </div>
       </div>

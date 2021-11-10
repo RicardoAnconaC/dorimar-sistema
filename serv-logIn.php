@@ -1,7 +1,8 @@
 <?php 
-session_start();
 
-header('Content-Type: application/json');
+
+function login() {
+  header('Content-Type: application/json');
 
 
     $method = 'POST';
@@ -47,10 +48,13 @@ die();  */
       $_SESSION['usuario'] = $response;
       header('Location: home.php');
     } else {
-      header('Location: login.html');
+      header('Location: login.php');
     }
 
     curl_close($ch);
+}
+
+
 
 
 ?>

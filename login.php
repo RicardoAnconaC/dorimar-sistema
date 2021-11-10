@@ -1,3 +1,13 @@
+<?php 
+session_start(); 
+
+ if(isset($_SESSION['usuario']) && $_SESSION['usuario'] != null && $_SESSION['usuario'] != ''){
+   header('location: home.php'); 
+   die();
+ }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +37,7 @@
       <div class="alert alert-danger py-2 text-center ocultar" role="alert">
         <p id="alerta" class="p-0 m-0">El nombre de usuario o contraseña son incorrectos</p>
       </div>
-      <form action="serv-logIn.php" method="POST">
+      <form action="session.php" method="POST">
         <div class="input-group mb-3 fadeIn second">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-circle"></i></span>
           <input name="usuario" type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1" required>
@@ -37,7 +47,7 @@
           <input type="password" name='password' class="form-control" placeholder="Contraseña" required>
         </div> <a class="fadeIn second" href="#" id="olvidaste">¿Olvidaste tu contraseña?</a>
         <div class="d-flex justify-content-end fadeIn second">
-          <button type="submit" class="btn btn-outline-success ">Iniciar</button>
+          <input type="submit" name='submit' class="btn btn-outline-success" value='Iniciar'></input>
         </div>
       </form>
 
