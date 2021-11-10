@@ -52,8 +52,5 @@ die();  */
 
     curl_close($ch);
 
-    
-
-    
 
 ?>
