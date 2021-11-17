@@ -31,10 +31,75 @@ session_start();
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
   <link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+
+
+  
   <style>
-      .text-white {
+      /* .text-white {
         color: #344767 !important;
       }
+ */
+      .text-oscuro {
+        color: #344767 !important;
+      }
+      .btn-secondary{
+        background-color: #0077c2 !important;
+      }
+      
+      .btn-secondary:hover{
+        background-color: #42a5f5 !important;
+      }
+
+      .btn-primary{
+        background-color: #1faa00 !important;
+      }
+
+      .btn-primary:hover{
+        background-color: #64dd17 !important;
+      }
+
+      .btn-primary:active{
+        background-color: #64dd17 !important;
+      }
+
+      .bg-headerTb{
+        background-color: #42a5f5 !important;
+      }
+
+      /*inputs*/
+
+      .input-group.input-group-outline.is-focused .form-label + .form-control, .input-group.input-group-outline.is-filled .form-label + .form-control {
+      border-color: #0077c2 !important;
+      border-top-color: transparent !important;
+      box-shadow: inset 1px 0 #0077c2, inset -1px 0 #0077c2, inset 0 -1px #0077c2;
+      }
+
+      .input-group.input-group-outline.is-focused .form-label, .input-group.input-group-outline.is-filled .form-label {
+        width: 100%;
+        height: 100%;
+        font-size: 0.6875rem !important;
+        color: #0077c2 !important;
+        display: flex;
+        line-height: 1.25 !important;
+      }
+
+      .input-group.input-group-outline.is-focused .form-label:before, .input-group.input-group-outline.is-focused .form-label:after, .input-group.input-group-outline.is-filled .form-label:before, .input-group.input-group-outline.is-filled .form-label:after {
+        border-top-color: #0077c2 !important;
+        box-shadow: inset 0 1px #0077c2 !important;
+      }
+
+      h6{
+        font-size: 2.5rem !important;
+      }
+
+      .button {
+    background-color: Transparent !important;
+    background-repeat: no-repeat !important;
+    border: none !important;
+    cursor: pointer !important;
+    overflow: hidden !important;
+}
   </style>
 </head>
 
@@ -44,7 +109,7 @@ session_start();
       <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href="" target="_blank">
         <img src="./assets/img/imagenes/dorimar.png" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold text-white"></span><!-- tiulo -->
+        <span class="ms-1 font-weight-bold text-oscuro"></span><!-- tiulo -->
       </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
@@ -57,16 +122,16 @@ session_start();
         </li>
           
         <li class="nav-item">
-          <a class="nav-link text-white " href="#">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <a class="nav-link text-oscuro " href="#">
+            <div class="text-oscuro text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
             <span class="nav-link-text ms-1">........</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="#">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <a class="nav-link text-oscuro " href="#">
+            <div class="text-oscuro text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">receipt_long</i>
             </div>
             <span class="nav-link-text ms-1">.........</span>
@@ -83,19 +148,19 @@ session_start();
           </a>
         </li> -->
         <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Cuenta</h6>
+          <h6 class="ps-4 ms-2 text-uppercase text-xs text-oscuro font-weight-bolder opacity-8">Cuenta</h6>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white ">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <div class="text-oscuro text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">person</i>
             </div>
             <span class="nav-link-text ms-1">Perfil</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="log" data-bs-toggle="modal" data-bs-target="#logaut">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <a class="nav-link text-oscuro " href="log" data-bs-toggle="modal" data-bs-target="#logaut">
+            <div class="text-oscuro text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">logout</i>
             </div>
             <span class="nav-link-text ms-1"> Cerrar sesión</span>
@@ -126,10 +191,6 @@ session_start();
            
           </div>
           <ul class="navbar-nav  justify-content-end">
-
-
-          
-           
             <!-- <li class="nav-item d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
                 <i class="fa fa-sign-out me-sm-1" ></i>
@@ -229,69 +290,103 @@ session_start();
       </div>
     </nav>
     <!-- End Navbar -->
-    <style>
-      .btn-secondary{
-        background-color: #0077c2 !important;
-      }
-      
-      .btn-secondary:hover{
-        background-color: #42a5f5 !important;
-      }
-
-      .btn-primary{
-        background-color: #1faa00 !important;
-      }
-
-      .btn-primary:hover{
-        background-color: #64dd17 !important;
-      }
-
-      .btn-primary:active{
-        background-color: #64dd17 !important;
-      }
-
-      .bg-headerTb{
-        background-color: #42a5f5 !important;
-      }
-    </style>
-
+   
     <div class="container-fluid" >
     <!-- Modal -->
-    <div class="modal fade" id="logaut" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Cerrar sesión</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            
-            <form action="session.php" method="POST">
-              <input type="submit" name='submit' class="btn btn-secondary" value='Confirmar'></input>
-            </form>
-            
+      <div class="modal fade" id="logaut" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Cerrar sesión</h5>
+              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+              <button type="button" name='cerrar' class="text-secondary button"  data-bs-dismiss="modal"  aria-label="Close" ><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              
+              <form action="session.php" method="POST">
+                <input type="submit" name='submit' class="btn btn-secondary m-0" value='Confirmar'></input>
+              </form>
+              
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
    
 
     <div class="container-fluid py-4" id="main">
       <div class="row">
+       
         <div class="col-12">
           <div class="card my-4">
 
-            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-              <div class="bg-headerTb shadow-primary border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">Facturas</h6>
-              </div>
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 ">
+              <div class="bg-headerTb shadow-primary border-radius-lg pt-0 pb-0 px-2">
+                
+                <div class="d-flex align-items-center py-3">
+                  <div class=" flex-grow-1 bd-highlight ">
+                    <h6 class="text-white text-capitalize p-0 m-0">FACTURAS INGRESADAS</h6>
+                  </div>
+                  <!-- <div class="p-2 bd-highlight">
+                    <div class="input-group input-group-outline">
+                      <label class="form-label">Filtro:</label>
+                      <input name="" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" required>
+                    </div>
+
+                  </div>
+                  <div class="p-2 bd-highlight ">
+                    <input type="" name='' class="btn btn-primary btn-sm  m-0" value='Agregar Factura'></input>
+                  </div> -->
+         
+                </div>
+                
+              </div> 
+             
             </div>
             
             <div class="card-body px-0 pb-2">
+            <div class="d-flex align-items-center px-3">
+                  <div class=" flex-grow-1 bd-highlight ">
+                    
+                  </div>
+                  
+                  <div class="p-2 bd-highlight">
+                    <div class="input-group input-group-outline">
+                      <label class="form-label"><i class="bi bi-search"></i>&nbsp;Buscar  </label>
+                      <input name="" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" required>
+                    </div>
+                  </div>
+                  <div class="p-2 bd-highlight ">
+                    <div class="dropdown">
+                      <a class="btn btn-secondary dropdown-toggle m-0" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Meses</a>
+
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Enero</a></li>
+                        <li><a class="dropdown-item" href="#">Febrero</a></li>
+                        <li><a class="dropdown-item" href="#">Marzo</a></li>
+                        <li><a class="dropdown-item" href="#">Abril</a></li>
+                        <li><a class="dropdown-item" href="#">Mayo</a></li>
+                        <li><a class="dropdown-item" href="#">Junio</a></li>
+                        <li><a class="dropdown-item" href="#">Julio</a></li>
+                        <li><a class="dropdown-item" href="#">Agosto</a></li>
+                        <li><a class="dropdown-item" href="#">Septiembre</a></li>
+                        <li><a class="dropdown-item" href="#">Octubre</a></li>
+                        <li><a class="dropdown-item" href="#">Noviembre</a></li>
+                        <li><a class="dropdown-item" href="#">Diciembre</a></li>
+                      </ul>
+                    </div>
+                    
+                  </div>
+                  <div class="p-2 bd-highlight ">
+                    <button type="button" class="btn btn-secondary btn-sm shadow-sm m-0"title="Agregar nueva factura" ><i style="font-size: 1.3em;"class="bi bi-plus-circle"></i></button>
+                  </div>
+                </div>
+                
+                <hr>
+
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
@@ -311,7 +406,6 @@ session_start();
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">PDF</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">XML</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">DIAS TRANSCURRIDOS</th>
-                      
                     </tr>
                   </thead>
                   <tbody class="text-center">
@@ -750,7 +844,7 @@ session_start();
 
     
 
-    <footer class="footer py-4  ">
+    <!-- <footer class="footer py-4  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6 mb-lg-0 mb-4">
@@ -772,57 +866,21 @@ session_start();
             </div>
           </div>
         </div>
-    </footer>
+    </footer> -->
     
 
   </main>
  
-  <div class="fixed-plugin">
   
-          
-          <!-- <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-white" onclick="sidebarType(this)" style="display: none;">White</button> -->
-        
-  </div>
   <!--   Core JS Files   -->
 
-  <style>
-    footer{ position:fixed; bottom:0px}
-    footer{ position:relative;}
-
-  </style>
+  
   
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  
   <script async defer src="./assets/js/proyecto-js.js"></script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script>
-       footer = function(){ 
-     /*el alto que tiene el navegador*/
-     $alto_navegador= $(window).height();
-     /*el alto que tiene el contenido de la pagina*/
-     $alto_documento= $(document).height(); 
-     /*  aqui condicionamos si el alto del contenido 
-      *  es mayor que
-      *  el alto del navegador*/
-     if ($alto_documento>$alto_navegador)
-     {
-         /* si es mayor es que tiene un contenido mas 
-          * largo que el alto del navegador y entonces lo dejamos a relativo*/
-         $("footer").css({"position":"relative"})
-         console.log("relative");
-     }
-     else
-     {
-         /* si el alto del contenido es menor que el alto del navegador es que
-          * tenemos espacio vacio y le mandamos abajo*/
-         $("footer").css({"position":"fixed"})
-         console.log("fixed");
-     } 
- 
- }
- footer();
-      </script> -->
- 
+  
   
   
   
